@@ -3,7 +3,7 @@
 Laravel booking system projekt lavet af Pernille Matthews &amp; Peter Jespersen
 
 <h1>Hvordan fungere det?</h1>
-
+<li>
 1# Opret en bruger
 2# Log ind med brugeren
 3# Opret en rekvirent
@@ -12,3 +12,4 @@ Laravel booking system projekt lavet af Pernille Matthews &amp; Peter Jespersen
 6# Opret en reservation
 7# Se reservationen på dashbordet / forsiden
 8# Have fun!
+</li>
