@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-</head>
-<body>
-<h1 class="title">Personer</h1>
-<ul>
-    @foreach ($personer as $person)
-        <li>
-            <a href="/person/{{ $person->id }}"> {{--{-- create clickable projects--}--}}
-            {{ $person->name }} {{ $person->initialer }}  {{ $person->email }} {{ $person->telefon }}</li>
+@extends('layouts.app')
 
-        <p>
-            <a href="/person/{{ $person->id }}/edit"><i class="fas fa-edit"></i></a>
-        </p>
+@section('content')
+<main class="show">
+  <center>
+    <h1 class="title">Person</h1>
+      <table>
+        <tr>
+          <td><b>Navn</b></td>
+          <td><b>Initialer</b></td>
+          <td><b>Email</b></td>
+          <td><b>Telefonnummer</b></td>
+          <td><b>Oplysninger</b></td>
+          <td><b>Rediger</b></td>
+        </tr>
+      @foreach ($personer as $person)
+        <tr>
+          <td>{{ $person->name  }}</td>
+          <td>{{ $person->initialer }}</td>
+          <td>{{ $person->email  }}</td>
+          <td>{{ $person->telefon }}</td>
+          <td><a href="/person/{{ $person->id }}"><i class="fas fa-info-circle"></td>
+          <td><a href="/person/{{ $person->id }}/edit"><i class="fas fa-edit"></i></a></td>
+        </tr>
+      @endforeach
+      </table>
+    </center>
 
-        </a>
-    @endforeach
+</main>
 
-</ul>
-</body>
-</html>
+@endsection
