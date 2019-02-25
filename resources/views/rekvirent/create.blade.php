@@ -22,8 +22,8 @@
         <li>
           <label for="rekvirent">Person eller Klasse?</label>
             <select name="type">
-                <option value="Klasse">Klasse</option>
                 <option value="Person">Person</option>
+                <option value="Klasse">Klasse</option>
             </select>
           <span>Er rekvireten tilknyttet en klasse eller en individuel person?</span>
         </li>
