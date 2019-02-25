@@ -2,7 +2,7 @@
 
 Laravel booking system projekt lavet af Pernille Matthews &amp; Peter Jespersen
 
-Hvordan fungere det?
+<h1>Hvordan fungere det?</h1>
 
 1# Opret en bruger
 2# Log ind med brugeren
