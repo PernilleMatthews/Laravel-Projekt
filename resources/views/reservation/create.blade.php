@@ -8,33 +8,34 @@
   <form method="POST" action="/reservation" class="form">
   {{ csrf_field() }}
     <ul>
-      <li>
-        <label for="name">Lokale</label>
-          <input type="text" maxlength="100" class="input" {{ $errors->has('lokale') ? 'is-danger' : '' }} name="lokale" value="{{ old('lokale') }}">
-        <span>Hvilket lokale vil du reservere?</span>
-      </li>
+        <li>
+            <label for="lokale">Lokale</label>
+            <select name="lokale" id="lokale">
+                @foreach (App\Lokale::all() as $lokale)
+                    <option>{{ $lokale->lokalebetegnelse }}</option>
+                @endforeach
+            </select>
+            <span>Hvilket lokale vil du reservere?</span>
+        </li>
 
-      <li>
-        <label for="datotid">Dato-tid</label>
-          <input type = "datetime-local" maxlength="100" name= "datotid" id="datotid"  {{ $errors->has('datotid') ? 'is-danger' : '' }} {{ old('datotid') }}>
-        <span>Hvornår vil du gerne reservere lokalet?</span>
-      </li>
 
-      <li>
-        <label for="rekvirent">Rekvirent</label>
-          <textarea name="rekvirent" maxlength="100" class="textarea"  {{ $errors->has('rekvirent') ? 'is-danger' : '' }}  >{{ old('rekvirent') }}</textarea>
-        <span>Angiv initialer på personen som reservere lokalet</span>
-      </li>
-
-      <li>
-        <label for="config">Konfiguration</label>
-          <canvas id="canvas" width=350 height=300  style="border: 1px solid #394263;"></canvas>
-        <span>Lokalets Konfiguration</span>
-      </li>
-
-      <li>
-        <input type="submit" value="Opret Reservation.." >
-      </li>
+        <li>
+            <label for="datotid">Dato-tid</label>
+            <input type = "datetime-local" maxlength="100" name= "datotid" id="datotid"  {{ $errors->has('datotid') ? 'is-danger' : '' }} {{ old('datotid') }}>
+            <span>Hvornår vil du gerne reservere lokalet?</span>
+        </li>
+        <li>
+            <label for="rekvirent">Rekvirent</label>
+            <select name="rekvirent" id="rekvirent">
+                @foreach (App\Rekvirent::all() as $rekvirent)
+                    <option>{{ $rekvirent->initialer }}</option>
+                @endforeach
+            </select>
+            <span>Hvilken rekvirent vil reservere lokalet?</span>
+        </li>
+        <li>
+            <input type="submit" value="Reserver Lokalet.." >
+        </li>
     </ul>
   </form>
 

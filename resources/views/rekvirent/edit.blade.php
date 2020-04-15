@@ -42,3 +42,6 @@
     </ul>
   </main>
 @endsection
+
+{{--foreach (App\Rekvirent::all() as $rekv)
+<option>{{$rekv->rekvirent}}</option>--}}
